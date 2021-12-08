@@ -1,0 +1,72 @@
+﻿<Window x:Class="Ex_MVVM.ViewModel.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex_MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="Add new Auto" Height="400" Width="400" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="FontFamily" Value="Calibri"></Setter>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="FontFamily" Value="Calibri"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="{Binding GarageColor}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.Row="0" Source="{Binding AddingAuto.Img}"></Image>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="18*"></ColumnDefinition>
+                <ColumnDefinition Width="31*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="5">
+                <TextBlock Margin="0,0,-4,0" Text="Mark -> " HorizontalAlignment="Center" ></TextBlock>
+                <TextBlock Margin="0,0,-5,0" Text="Model -> " HorizontalAlignment="Center" ></TextBlock>
+                <TextBlock Margin="0,0,-6,0" Text="Number->" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Margin="0,0,-6,0" Text="Volume ->" HorizontalAlignment="Center" ></TextBlock>
+                <TextBlock Margin="0,0,-4,0" Text="Oil Waste ->" HorizontalAlignment="Center" ></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="5">
+                <TextBlock Margin="20,0,0,0" HorizontalAlignment="Left" Text="{Binding AddingAuto.Mark}"></TextBlock>
+                <TextBlock Margin="20,0,0,0" HorizontalAlignment="Left" Text="{Binding AddingAuto.Model}"></TextBlock>
+                <TextBlock Margin="20,0,0,0" HorizontalAlignment="Left" Text="{Binding AddingAuto.Number}"></TextBlock>
+                <TextBlock Margin="20,0,0,0" HorizontalAlignment="Left" Text="{Binding AddingAuto.Volume}"></TextBlock>
+                <TextBlock Margin="20,0,0,0" HorizontalAlignment="Left" Text="{Binding AddingAuto.OilWaste}"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Column="0" Grid.Row="2" Margin="0,0,-4,0" Text="Mark -> " HorizontalAlignment="Center" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" Margin="0,0,-5,0" Text="Model -> " HorizontalAlignment="Center" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" Margin="0,0,-6,0" Text="Number->" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5" Margin="0,0,-6,0" Text="Volume ->" HorizontalAlignment="Center" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="6" Margin="0,0,-4,0" Text="Oil Waste ->" HorizontalAlignment="Center" ></TextBlock>
+
+        <Button Background="{Binding ButtonColor}" Foreground="{Binding TextColor}" Grid.Column="0" Grid.Row="1" Margin="2" HorizontalAlignment="Center" Content="AddFoto" MinWidth="100" Command="{Binding AddImg}"></Button>
+        <Button Background="{Binding ButtonColor}" Foreground="{Binding TextColor}" Grid.Column="1" Grid.Row="1" Margin="2"  HorizontalAlignment="Center" Content="Clear Data" MinWidth="100" Command="{Binding ClearCommand}"></Button>
+        <TextBox Margin="3" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Text="{Binding AddingAuto.Mark}"/>
+        <TextBox Margin="3" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Text="{Binding AddingAuto.Model}"></TextBox>
+        <TextBox Margin="3" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Text="{Binding AddingAuto.Number}"></TextBox>
+        <TextBox Margin="3" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch" Text="{Binding AddingAuto.Volume}"></TextBox>
+        <TextBox Margin="3" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Stretch" Text="{Binding AddingAuto.OilWaste}"></TextBox>
+        <Button Grid.Column="0" Grid.Row="7" Margin="2" Content="Add" Command="{Binding AddCommand}" MinWidth="100"  HorizontalAlignment="Center" Background="Green" Click="Button_Click_1"></Button>
+        <Button Grid.Column="1" Grid.Row="7" Content="Cancel" MinWidth="100" Background="Red" HorizontalAlignment="Center" Margin="110,2,35,2" Click="Button_Click"></Button>
+    </Grid>
+</Window>
